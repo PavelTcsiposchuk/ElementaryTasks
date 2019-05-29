@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6LuckyTickets", "..\Luc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{B7F8CC84-3F13-4C36-BB2C-89489B7BA980}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task7Sequence", "Task7Sequence\Task7Sequence.csproj", "{2145B287-05E4-4B7D-8385-2C0F92F46408}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2EnvelopeAnalyzer", "EnvelopeAnalyzerr\Task2EnvelopeAnalyzer.csproj", "{FAB09A4B-E6BD-4203-AD61-9DB17055A1D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7F8CC84-3F13-4C36-BB2C-89489B7BA980} = {B7F8CC84-3F13-4C36-BB2C-89489B7BA980}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,14 @@ Global
 		{B7F8CC84-3F13-4C36-BB2C-89489B7BA980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7F8CC84-3F13-4C36-BB2C-89489B7BA980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7F8CC84-3F13-4C36-BB2C-89489B7BA980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2145B287-05E4-4B7D-8385-2C0F92F46408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2145B287-05E4-4B7D-8385-2C0F92F46408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2145B287-05E4-4B7D-8385-2C0F92F46408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2145B287-05E4-4B7D-8385-2C0F92F46408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAB09A4B-E6BD-4203-AD61-9DB17055A1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB09A4B-E6BD-4203-AD61-9DB17055A1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB09A4B-E6BD-4203-AD61-9DB17055A1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB09A4B-E6BD-4203-AD61-9DB17055A1D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
