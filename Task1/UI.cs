@@ -28,6 +28,7 @@ namespace Task1
 
         public static void PrintBoard(IBoard board)
         {
+            UI.ShowMessage(string.Format("Доска с высотой {0} и шириной {1} :", board.Height, board.Weight));
             for( int indexX = 0; indexX < board.Height; indexX++)
             {
                 for(int indexY = 0; indexY < board.Weight; indexY++)

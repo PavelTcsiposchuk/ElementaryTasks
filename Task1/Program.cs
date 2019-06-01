@@ -16,16 +16,14 @@ namespace Task1
         private static int[] GetReadyArgs(string[] args)
         {
             int[] readyArgs;
-            if (args.Length != 2)
+            if (Validator.IsLenghtArgsValid(args))
             {
                 UI.ShowInstruction();
                 readyArgs = GetArgsFromUI();
             }
             else
             {
-                bool isFirstArgValid = Validator.IsValidNumber(args[0], out int firstArgument);
-                bool isSecondArgValid = Validator.IsValidNumber(args[1], out int secondArgument);
-                if (isFirstArgValid && isSecondArgValid)
+                if (Validator.IsValidArgs(args, out int firstArgument, out int secondArgument))
                 {
                     readyArgs = new int[] { firstArgument, secondArgument };
                 }
