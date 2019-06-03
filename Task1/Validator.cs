@@ -11,7 +11,7 @@ namespace Task1
             return Int32.TryParse(number, out result) && result >= 1 && result <= 32;
         }
 
-        public static bool IsLenghtArgsValid(string [] args)
+        public static bool IsLenghtArgsInvalid(string [] args)
         {
             return args.Length != 2;
         }

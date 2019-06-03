@@ -16,7 +16,7 @@ namespace Task1
         private static int[] GetReadyArgs(string[] args)
         {
             int[] readyArgs;
-            if (Validator.IsLenghtArgsValid(args))
+            if (Validator.IsLenghtArgsInvalid(args))
             {
                 UI.ShowInstruction();
                 readyArgs = GetArgsFromUI();
