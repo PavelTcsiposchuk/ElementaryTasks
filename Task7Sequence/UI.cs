@@ -9,7 +9,7 @@ namespace Task7Sequence
 {
     class UI : BaseUI
     {
-        public static int GetArgumentFromConsole()
+        public static int GetNaturalNumberFromConsole()
         {
             bool isReaded = false;
             int result = 0;
