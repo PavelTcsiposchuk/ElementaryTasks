@@ -10,7 +10,7 @@ namespace Task7Sequence
     {
         public static bool IsValidNumber(string number, out int result)
         {
-            return int.TryParse(number, out result);
+            return int.TryParse(number, out result) && result > 0;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Task7Sequence
         static void Main(string[] args)
         {
 
+
         }
     }
 }
