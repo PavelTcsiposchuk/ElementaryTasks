@@ -16,7 +16,7 @@ namespace CommonLibrary
         public static void PrintIEnumerable<T>(IEnumerable<T> enumerable)
         {
             string print = String.Join(",", enumerable);
-            ShowResult(print);
+            ShowMessage(print);
 
         }
         /// <summary>
@@ -32,16 +32,8 @@ namespace CommonLibrary
         /// </summary>
         protected static void ShowInstructionWrongPath()
         {
-            Console.WriteLine("Ошибка, по указанному пути файла не существует");
-            Console.WriteLine("Введите еще раз, пример - D:\\\\Папка\\\\Filename.txt ");
-        }
-        /// <summary>
-        /// Показывает сообщение об результате программы пользователю
-        /// </summary>
-        /// <param name="message"></param>
-        public static void ShowResult(string message)
-        {
-            Console.WriteLine(message);
+            ShowMessage("Ошибка, по указанному пути файла не существует");
+            ShowMessage("Введите еще раз, пример - D:\\\\Папка\\\\Filename.txt ");
         }
         /// <summary>
         /// Показывает сообщение пользователю
@@ -52,19 +44,22 @@ namespace CommonLibrary
             Console.WriteLine(message);
         }
         /// <summary>
-        /// Ожидает ввод пользователем строки
+        /// Спрашивает пользователя хочет ли он продолжить. Ожидает ввод пользователем строки
         /// </summary>
         /// <returns>Возвращает true, если пользователем была введено y/Yes (без учета регистра) и false в ином случае</returns>
         public static bool AskUserAboutEndProgram()
         {
+            ShowMessage("Вы хотите продолжить?");
+            ShowMessage("Введите \"yes\" или \"y\", если да");
+            
             bool isEndSession = true;
             string response = Console.ReadLine();
+
             response = response.ToUpperInvariant();
             if (response == "YES" || response == "Y")
             {
                 isEndSession = false;
             }
-            
 
             return isEndSession;
         }

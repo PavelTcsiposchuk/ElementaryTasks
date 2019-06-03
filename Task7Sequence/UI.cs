@@ -39,7 +39,7 @@ namespace Task7Sequence
 
         public  static void PrintResult(int number, IEnumerable<int> enumerable)
         {
-            ShowResult(String.Format("Ряд натуральных чисел, квадрат которых меньше {0} ", number));
+            ShowMessage(String.Format("Ряд натуральных чисел, квадрат которых меньше {0} ", number));
             PrintIEnumerable(enumerable);
         }
 
