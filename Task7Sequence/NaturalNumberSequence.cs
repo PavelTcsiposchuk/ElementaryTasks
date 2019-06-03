@@ -10,17 +10,25 @@ namespace Task7Sequence
 {
     public class NaturalNumberSequence : BaseSequence
     {
+        #region Constructor
+
         public NaturalNumberSequence(int number) : base(1, number)
         {
 
         }
 
+        #endregion
+
+        #region Method 
+
         public IEnumerable<int> GetNaturalNumberSequence()
         {
-            for(int i = LeftRange; i < RightRange*RightRange; i++ )
+            for(int index = LeftRange; RightRange > index*index; index++ )
             {
-                yield return i;
+                yield return index;
             }
         }
+
+        #endregion
     }
 }

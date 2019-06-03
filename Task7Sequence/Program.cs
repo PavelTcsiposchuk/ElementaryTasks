@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task7Sequence
 {
@@ -10,7 +6,25 @@ namespace Task7Sequence
     {
         static void Main(string[] args)
         {
+            int range = GetReadyArgument(args);
+            NaturalNumberSequence naturalNumberSequence = new NaturalNumberSequence(range);
+            UI.PrintResult(range, naturalNumberSequence.GetNaturalNumberSequence());
 
+            Console.ReadLine();
         }
+
+        private static int GetReadyArgument(string[] args)
+        {
+            int readyArgs;
+
+            if (!Validator.CheckArgument(args,out readyArgs))
+            {
+                UI.ShowInstruction();
+                readyArgs = UI.GetNaturalNumberFromConsole();
+            }
+
+            return readyArgs;
+        }
+
     }
 }

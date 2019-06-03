@@ -10,8 +10,8 @@ namespace CommonLibrary
     {
         #region Properties
 
-        public int LeftRange { get; set; }
-        public int RightRange { get; set; }
+        public virtual int LeftRange { get; protected set; }
+        public virtual int RightRange { get; protected set; }
 
         #endregion
 
