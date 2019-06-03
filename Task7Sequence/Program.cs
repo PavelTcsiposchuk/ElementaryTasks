@@ -8,7 +8,7 @@ namespace Task7Sequence
         {
             int range = GetReadyArgument(args);
             NaturalNumberSequence naturalNumberSequence = new NaturalNumberSequence(range);
-            UI.PrintResult(args, naturalNumberSequence.GetNaturalNumberSequence());
+            UI.PrintResult(range, naturalNumberSequence.GetNaturalNumberSequence());
 
             Console.ReadLine();
         }

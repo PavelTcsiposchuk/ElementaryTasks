@@ -16,7 +16,7 @@ namespace Task7Sequence
 
             while (!isReaded)
             {
-                UI.ShowMessage("Введите целое натуральное число");
+                UI.ShowMessage("Введите целое натуральное число до 2147483647");
                 isReaded = Int32.TryParse(Console.ReadLine(), out result);
                 if (isReaded)
                 {
@@ -24,11 +24,12 @@ namespace Task7Sequence
                 }
                 else
                 {
-                    UI.ShowError("Вы ввели не целое число");
+                    UI.ShowError("Вы ввели не целое число до 2147483647\n");
+                    continue;
                 }
                 if (!isReaded)
                 {
-                    UI.ShowError("Вы ввели не натуральное число");
+                    UI.ShowError("Вы ввели не натуральное число \n");
                 }
             }
 
@@ -36,9 +37,10 @@ namespace Task7Sequence
 
         }
 
-        internal static void PrintResult(string[] args, IEnumerable<int> enumerable)
+        public  static void PrintResult(int number, IEnumerable<int> enumerable)
         {
-            
+            ShowResult(String.Format("Ряд натуральных чисел, квадрат которых меньше {0} ", number));
+            PrintIEnumerable(enumerable);
         }
 
         public static void ShowInstruction()
