@@ -36,9 +36,14 @@ namespace Task7Sequence
 
         }
 
-        internal static void ShowInstruction()
+        internal static void PrintResult(string[] args, IEnumerable<int> enumerable)
         {
-            throw new NotImplementedException();
+            
+        }
+
+        public static void ShowInstruction()
+        {
+            Console.WriteLine("Программа выводит ряд натуральных чисел через запятую, квадрат которых меньше заданного n.");
         }
     }
 }
