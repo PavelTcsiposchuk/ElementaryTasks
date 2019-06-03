@@ -12,5 +12,18 @@ namespace Task7Sequence
         {
             return int.TryParse(number, out result) && result > 0;
         }
+
+        public static bool CheckArgument(string [] args, out int resultNumber)
+        {
+            bool result = false;
+            resultNumber = -1;
+
+            if (args.Length == 1)
+            {
+                result = IsValidNumber(args[0], out resultNumber);
+            }
+
+            return result;
+        }
     }
 }

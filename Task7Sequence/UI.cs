@@ -36,5 +36,9 @@ namespace Task7Sequence
 
         }
 
+        internal static void ShowInstruction()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
