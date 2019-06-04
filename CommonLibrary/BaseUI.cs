@@ -19,13 +19,9 @@ namespace CommonLibrary
             ShowResult(print);
 
         }
-        /// <summary>
-        /// Выводит переданную строку на консоль, без перехода на новую строку
-        /// </summary>
-        /// <param name="message">Строка содержащая форматирующие последовательности для корректного отображения</param>
         public static void ShowError(string message)
         {
-            Console.Write(message);
+            Console.WriteLine(message);
         }
         /// <summary>
         /// Выводит сообщения консоль о неверности пути к файлу и приводит пример корректного пути

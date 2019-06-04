@@ -6,47 +6,40 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            int[] readyArgs = GetReadyArgs(args);
-            Board board = new Board(readyArgs[0], readyArgs[1]);
-            UI.PrintBoard(board);
+            Controller application = new Controller();
+
+            StartApplication(args, application);
+            while (!application.IsSuccessful)
+            {
+                StartApplicationWithoutArgs(application);
+            }
 
             Console.ReadLine();
         }
 
-        private static int[] GetReadyArgs(string[] args)
+        private static void StartApplicationWithoutArgs(Controller application)
         {
-            int[] readyArgs;
-            if (Validator.IsLenghtArgsInvalid(args))
+            try
             {
-                UI.ShowInstruction();
-                readyArgs = GetArgsFromUI();
+                application.Run();
             }
-            else
+            catch (ArgumentException ex)
             {
-                if (Validator.IsValidArgs(args, out int firstArgument, out int secondArgument))
-                {
-                    readyArgs = new int[] { firstArgument, secondArgument };
-                }
-                else
-                {
-                    UI.ShowError("Было указано неподходящее значение, попробуйте еще раз \n");
-                    readyArgs = GetArgsFromUI();
-                }
+                UI.ShowError(ex.Message);
             }
-
-            return readyArgs;
         }
 
-        private static int[] GetArgsFromUI()
+        private static void StartApplication(string[] args, Controller application)
         {
-            int[] readyArgs = new int[2];
-
-            UI.ShowMessage("Нужно задать ширину.");
-            readyArgs[0] = UI.ReadParametr();
-            UI.ShowMessage("Нужно задать высоту.");
-            readyArgs[1] = UI.ReadParametr();
-            
-            return readyArgs;
+            try
+            {
+                application.Run(args);
+            }
+            catch (ArgumentException ex)
+            {
+                UI.ShowError(ex.Message);
+            }
         }
+
     }
 }
