@@ -13,14 +13,16 @@ namespace Task8FibonacciSequence
             return int.TryParse(number, out result) && result > 0;
         }
 
-        public static bool CheckArgument(string [] args, out int resultNumber)
+        public static bool CheckArgument(string [] args, out int[] resultRange)
         {
             bool result = false;
-            resultNumber = -1;
+            resultRange = new int[2];
 
-            if (args.Length == 1)
+            if (args.Length == 2)
             {
-                result = IsValidNumber(args[0], out resultNumber);
+                result = IsValidNumber(args[0], out resultRange[0]);
+                result = IsValidNumber(args[1], out resultRange[1]);
+
             }
 
             return result;

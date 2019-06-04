@@ -6,21 +6,23 @@ namespace Task8FibonacciSequence
     {
         static void Main(string[] args)
         {
-            int range = GetReadyArgument(args);
-            FibonacciSequence naturalNumberSequence = new FibonacciSequence(range);
-            UI.PrintResult(range, naturalNumberSequence.GetFibonacciSequence());
+            int[] range = GetReadyArgument(args);
+            FibonacciSequence fibSequence = new FibonacciSequence(range[0], range[1]);
+            UI.PrintResult(range, fibSequence.GetFibonacciSequence());
 
             Console.ReadLine();
         }
 
-        private static int GetReadyArgument(string[] args)
+        private static int [] GetReadyArgument(string[] args)
         {
-            int readyArgs;
+            int[] readyArgs;
 
             if (!Validator.CheckArgument(args,out readyArgs))
             {
                 UI.ShowInstruction();
-                readyArgs = UI.GetNaturalNumberFromConsole();
+                readyArgs = new int[2];
+                readyArgs[0] = UI.GetNaturalNumberFromConsole();
+                readyArgs[1] = UI.GetNaturalNumberFromConsole(readyArgs[0]);
             }
 
             return readyArgs;
