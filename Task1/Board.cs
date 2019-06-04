@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Task1
 {
-    public class Board : IBoard
+    public class Board
     {
         #region Properties and Fields
 
@@ -35,6 +35,25 @@ namespace Task1
                 for (int indexY = 0; indexY < height; indexY++)
                 {
                     if( (indexX % 2 == 0 && indexY % 2 == 1) || (indexX % 2 == 1 && indexY % 2 == 0) )
+                    {
+                        this[indexX, indexY] = new Cell(Color.Black);
+                    }
+                    else
+                    {
+                        this[indexX, indexY] = new Cell(Color.White);
+                    }
+                }
+            }
+        }
+
+        public Board(InputModel inputModel)
+        {
+            Cells = new Cell[inputModel.WeightBoard, inputModel.HeightBoard];
+            for (int indexX = 0; indexX < inputModel.WeightBoard; indexX++)
+            {
+                for (int indexY = 0; indexY < inputModel.HeightBoard; indexY++)
+                {
+                    if ((indexX % 2 == 0 && indexY % 2 == 1) || (indexX % 2 == 1 && indexY % 2 == 0))
                     {
                         this[indexX, indexY] = new Cell(Color.Black);
                     }
