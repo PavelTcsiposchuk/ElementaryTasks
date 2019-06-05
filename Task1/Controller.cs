@@ -1,17 +1,13 @@
-﻿using System;
+﻿using CommonLibrary;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Task1
 {
-    public class Controller
+    public class Controller : BaseController
     {
-        public bool IsSuccessful { get; private set; }
-
-        public Controller()
-        {
-            IsSuccessful = false;
-        }
+        
 
         public void Run(string [] args)
         {

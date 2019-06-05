@@ -50,9 +50,10 @@ namespace CommonLibrary
         /// <summary>
         /// Ожидает ввод пользователем строки
         /// </summary>
-        /// <returns>Возвращает true, если пользователем была введено y/Yes (без учета регистра) и false в ином случае</returns>
+        /// <returns>Возвращает false, если пользователем была введено y/Yes (без учета регистра) и true в ином случае</returns>
         public static bool AskUserAboutEndProgram()
         {
+            ShowMessage("Вы хотите продолжить?Введите \"y\" или \"yes\", если да");
             bool isEndSession = true;
             string response = Console.ReadLine();
             response = response.ToUpperInvariant();
