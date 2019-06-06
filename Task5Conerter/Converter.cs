@@ -18,7 +18,7 @@ namespace Task5Conerter
         {
             get
             {
-                return Number > 0 ? ConvertNumberToString() : "minus " + ConvertNumberToString();
+                return Number >= 0 ? ConvertNumberToString() : "minus " + ConvertNumberToString();
             }
         }
 
@@ -41,6 +41,9 @@ namespace Task5Conerter
             List<int> digits = CreateListWithDigits(Number, FindNumberDigit(Number));
             switch(digits.Count)
             {
+                case 0:
+                    result = "zero";
+                    break;
                 case 1:
                     result += GetForUnit(digits[0]);
                     break;
@@ -107,34 +110,34 @@ namespace Task5Conerter
             switch (digits[0] * 10 + digits[1])
             {
                 case 10:
-                    result = result + " " + numbers1to15[10];
+                    result = numbers1to15[10];
                     break;
                 case 11:
-                    result = result + " " + numbers1to15[11];
+                    result =  numbers1to15[11];
                     break;
                 case 12:
-                    result = result + " " + numbers1to15[12];
+                    result =  numbers1to15[12];
                     break;
                 case 13:
-                    result = result + " " + numbers1to15[13];
+                    result = numbers1to15[13];
                     break;
                 case 14:
-                    result = result + " " + numbers1to15[14];
+                    result =  numbers1to15[14];
                     break;
                 case 15:
-                    result = result + " " + numbers1to15[15];
+                    result = numbers1to15[15];
                     break;
                 case 16:
-                    result = result + " " + numbers1to15[16];
+                    result = numbers1to15[16];
                     break;
                 case 17:
-                    result = result + " " + numbers1to15[17];
+                    result =  numbers1to15[17];
                     break;
                 case 18:
-                    result = result + " " + numbers1to15[18];
+                    result = numbers1to15[18];
                     break;
                 case 19:
-                    result = result + " " + numbers1to15[19];
+                    result = numbers1to15[19];
                     break;
                 default:
                     result = numbers20to90[digits[0]] + (digits[1] > 0 ? "-" + numbers1to15[digits[1]] : " ");
