@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 
 namespace Task1
 {
@@ -25,6 +26,7 @@ namespace Task1
             }
             catch (ArgumentException ex)
             {
+                logger.Error(ex.Message);
                 UI.ShowError(ex.Message);
             }
         }
@@ -37,9 +39,11 @@ namespace Task1
             }
             catch (ArgumentException ex)
             {
+                logger.Error(ex.Message);
                 UI.ShowError(ex.Message);
             }
         }
 
+        private static Logger logger = LogManager.GetCurrentClassLogger();
     }
 }
