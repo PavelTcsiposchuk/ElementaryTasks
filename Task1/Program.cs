@@ -7,6 +7,7 @@ namespace Task1
     {
         static void Main(string[] args)
         {
+            logger.Debug("Start program");
             Controller application = new Controller();
 
             StartApplication(args, application);
@@ -14,6 +15,7 @@ namespace Task1
             {
                 StartApplicationWithoutArgs(application);
             }
+            logger.Debug("Successful finish program");
 
             Console.ReadLine();
         }

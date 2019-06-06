@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,12 @@ namespace Task5Conerter
     {
         static void Main(string[] args)
         {
+            logger.Debug("Start program");
             InputModel model = GetInputModel(args);
             Controller controller = new Controller();
             controller.Run(model);
 
+            logger.Debug("Successful finish program");
             Console.Read();
         }
 
@@ -45,10 +48,13 @@ namespace Task5Conerter
             catch(ArgumentException ex)
             {
                 UI.ShowMessage(ex.Message);
+                logger.Error(ex.Message);
                 inputModel = null;
             }
 
             return inputModel;
         }
+
+        private static Logger logger = LogManager.GetCurrentClassLogger();
     }
 }
